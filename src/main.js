@@ -12,7 +12,7 @@ async function main() {
   const emlExtractedData = await Promise.all(inputFileAbsPaths.map(async (filePath) => await extractData(filePath)));
 
   const csvHeaderRow = getHeaderRow();
-  const outputCsvPath = pathJoin(outputsDir, "output.csv");
+  const outputCsvPath = pathJoin(outputsDir, "output-main.csv");
   await writeCsv(outputCsvPath, csvHeaderRow, emlExtractedData);
 }
 
